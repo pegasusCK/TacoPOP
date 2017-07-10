@@ -18,6 +18,8 @@
 		00541D011F0EEC7F003F3FD8 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00541D001F0EEC7F003F3FD8 /* MainVC.swift */; };
 		00541D031F0EEEF6003F3FD8 /* DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00541D021F0EEEF6003F3FD8 /* DropShadow.swift */; };
 		00541D051F0EF626003F3FD8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00541D041F0EF626003F3FD8 /* HeaderView.swift */; };
+		00CB2FA41F14270E00D019EF /* Taco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB2FA31F14270E00D019EF /* Taco.swift */; };
+		00CB2FA61F142B9000D019EF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB2FA51F142B9000D019EF /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		00541D001F0EEC7F003F3FD8 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		00541D021F0EEEF6003F3FD8 /* DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropShadow.swift; sourceTree = "<group>"; };
 		00541D041F0EF626003F3FD8 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		00CB2FA31F14270E00D019EF /* Taco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taco.swift; sourceTree = "<group>"; };
+		00CB2FA51F142B9000D019EF /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,7 @@
 				00541CFF1F0EE9D8003F3FD8 /* Resources */,
 				00541CFE1F0EE913003F3FD8 /* Extensions */,
 				00541CFC1F0EE905003F3FD8 /* Protocols */,
-				00541CFB1F0EE2D7003F3FD8 /* Data */,
+				00541CFB1F0EE2D7003F3FD8 /* Model */,
 				00541CFA1F0EE2D3003F3FD8 /* View */,
 				00541CF91F0EE2CB003F3FD8 /* Controller */,
 				00541CCD1F0EE1F9003F3FD8 /* TacoPOP.xcdatamodeld */,
@@ -153,11 +157,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		00541CFB1F0EE2D7003F3FD8 /* Data */ = {
+		00541CFB1F0EE2D7003F3FD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				00CB2FA31F14270E00D019EF /* Taco.swift */,
+				00CB2FA51F142B9000D019EF /* DataService.swift */,
 			);
-			name = Data;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		00541CFC1F0EE905003F3FD8 /* Protocols */ = {
@@ -324,7 +330,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00541D051F0EF626003F3FD8 /* HeaderView.swift in Sources */,
+				00CB2FA61F142B9000D019EF /* DataService.swift in Sources */,
 				00541CC71F0EE1F9003F3FD8 /* AppDelegate.swift in Sources */,
+				00CB2FA41F14270E00D019EF /* Taco.swift in Sources */,
 				00541D011F0EEC7F003F3FD8 /* MainVC.swift in Sources */,
 				00541D031F0EEEF6003F3FD8 /* DropShadow.swift in Sources */,
 				00541CCF1F0EE1F9003F3FD8 /* TacoPOP.xcdatamodeld in Sources */,
@@ -580,6 +588,7 @@
 				00541CF01F0EE1F9003F3FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00541CF11F0EE1F9003F3FD8 /* Build configuration list for PBXNativeTarget "TacoPOPTests" */ = {
 			isa = XCConfigurationList;
@@ -588,6 +597,7 @@
 				00541CF31F0EE1F9003F3FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00541CF41F0EE1F9003F3FD8 /* Build configuration list for PBXNativeTarget "TacoPOPUITests" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +606,7 @@
 				00541CF61F0EE1F9003F3FD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
