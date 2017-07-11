@@ -24,14 +24,22 @@ class MainVC: UIViewController, DataServiceDelegate {
         ds.delegate = self
         ds.loadDeliciousTacoData()
         
+        //randomize the array using extension made in MutableCollection+Ext
+        ds.tacoArray.shuffle()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
 
         //add drop shadow to title
         headerView.addDropShadow()
         
+        /*
         let nib = UINib(nibName: "TacoCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "TacoCell")
+        */
+        
+        //TacoCell conform to NibLoadableView protocol --> replaces the code commented out above
+        collectionView.register(TacoCell.self)
     }
     
     //will be called once data has finished loading
@@ -55,19 +63,29 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TacoCell", for: indexPath) as? TacoCell {
-            
-            cell.configureCell(taco: ds.tacoArray[indexPath.row])
-            
-            return cell
-        }
+//        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TacoCell", for: indexPath) as? TacoCell {
+//            
+//            cell.configureCell(taco: ds.tacoArray[indexPath.row])
+//            
+//            return cell
+//        }
+//        
+//        return UICollectionViewCell()
         
-        return UICollectionViewCell()
+        //UICollectionView extension with generic dequeueReusableCell method
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as TacoCell
+        cell.configureCell(taco: ds.tacoArray[indexPath.row])
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
+        //make the cell shake when clicked
+        if let cell = collectionView.cellForItem(at: indexPath) as? TacoCell {
+            
+            cell.shake()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
